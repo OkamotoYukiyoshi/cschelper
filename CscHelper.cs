@@ -14,7 +14,7 @@ namespace CscHelper
         {
             try
             {
-                Excecute(args);
+                Execute(args);
             }
             catch(Exception ex)
             {
@@ -23,9 +23,9 @@ namespace CscHelper
             
         }
 
-        static void Excecute(string[] args)
+        static void Execute(string[] args)
         {
-            var op = ExcecuteOption.FromArgs(args);
+            var op = ExecuteOption.FromArgs(args);
             var info = new ProcessStartInfo(op.CompilePath,op.CsArgs);
             info.UseShellExecute = false;
             Process.Start(info);
@@ -44,7 +44,7 @@ namespace CscHelper
         }
     }
 
-    class ExcecuteOption
+    class ExecuteOption
     {
         readonly string _CompilePath;
         readonly string _Directory;
@@ -77,7 +77,7 @@ namespace CscHelper
             }
         }
 
-        public ExcecuteOption(string cmpPth, string dir,string exeType,string name,string bat)
+        public ExecuteOption(string cmpPth, string dir,string exeType,string name,string bat)
         {
             _CompilePath = cmpPth;
             _Directory = dir;
@@ -86,13 +86,13 @@ namespace CscHelper
             _OutputBat = bat;
         }
 
-        public static ExcecuteOption FromArgs(string[] args)
+        public static ExecuteOption FromArgs(string[] args)
         {
             if(args.Length < 4)
             {
                 throw new ArgumentException("arg err");
             }
-            return new ExcecuteOption(args[0],args[1],args[2],args[3],args.Length == 4 ? null: args[4]);
+            return new ExecuteOption(args[0],args[1],args[2],args[3],args.Length == 4 ? null: args[4]);
         }
         
     }
