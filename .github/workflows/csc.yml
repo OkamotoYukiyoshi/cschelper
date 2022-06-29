@@ -19,8 +19,8 @@ jobs:
     - name: Build with csc
       working-directory: .
       run: csc /out:${{ env.EXE_NAME }} *.cs
-    - name: Upload
+    - name: Upload exe
       uses: actions/upload-artifact@v3
       with:
-        name: $env:EXE_NAME
-        path: $env:EXE_NAME.exe
+        name: ${{ env.EXE_NAME }}
+        path: ${{ env.EXE_NAME }}.exe
