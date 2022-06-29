@@ -1,3 +1,5 @@
+[![csc](https://github.com/OkamotoYukiyoshi/cschelper/actions/workflows/csc.yml/badge.svg)](https://github.com/OkamotoYukiyoshi/cschelper/actions/workflows/csc.yml)
+
 # cschelper
 
 DEMO
