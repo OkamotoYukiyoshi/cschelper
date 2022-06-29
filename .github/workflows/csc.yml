@@ -16,3 +16,8 @@ jobs:
     - name: Build with csc
       working-directory: .
       run: csc *.cs
+    - name: Upload
+    - uses: actions/upload-artifact@v3
+      with:
+        name: cschelper
+        path: cschelper.exe
