@@ -6,6 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    env:
+      EXE_NAME: cschelper 
 
     steps:
     - uses: actions/checkout@v1
@@ -15,9 +18,9 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with csc
       working-directory: .
-      run: csc /out:cschelper.exe *.cs
+      run: csc /out:$env:EXE_NAME *.cs
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
-        name: cschelper
-        path: cschelper.exe
+        name: $env:EXE_NAME
+        path: $env:EXE_NAME.exe
