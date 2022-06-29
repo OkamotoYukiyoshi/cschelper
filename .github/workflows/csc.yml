@@ -18,7 +18,7 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with csc
       working-directory: .
-      run: csc /out:${{ env.EXE_NAME }} *.cs
+      run: csc /out:${{ env.EXE_NAME }}.exe *.cs
     - name: Upload exe
       uses: actions/upload-artifact@v3
       with:
